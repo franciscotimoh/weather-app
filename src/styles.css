@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:
+        system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/*
+Checkbox Styling
+
+Credit to Balint Hudecz in https://hudecz.medium.com/how-to-create-a-pure-css-toggle-button-2fcc955a8984
+*/
+
+.temp-unit-toggle {
+    display: none;
+}
+
+.toggle-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    border: 3px solid #343434;
+    border-radius: 20px;
+    background: #343434;
+    font-weight: bold;
+    color: #343434;
+    cursor: pointer;
+}
+
+.toggle-container::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 20px;
+    background: white;
+    transition: all 0.3s;
+}
+
+.toggle-container div {
+    padding: 6px;
+    text-align: center;
+    z-index: 1;
+}
+
+.temp-unit-toggle:checked + .toggle-container::before {
+    left: 50%;
+}
+
+.temp-unit-toggle:checked + .toggle-container div:first-child {
+    color: white;
+    transition: color 0.3s;
+}
+
+.temp-unit-toggle + .toggle-container div:first-child {
+    color: #343434;
+    transition: color 0.3s;
+}
+
+.temp-unit-toggle:checked + .toggle-container div:last-child {
+    color: #343434;
+    transition: color 0.3s;
+}
+
+.temp-unit-toggle + .toggle-container div:last-child {
+    color: white;
+    transition: color 0.3s;
+}
+
+/* The rest */
+.validation-error {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.general {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 8rem;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.details {
+    display: flex;
+}
+
+.temp {
+    font-size: 4rem;
+}
+
+.misc {
+    border-left: solid 1px #343434;
+    margin-left: 1rem;
+    padding-left: 1rem;
+}
+
+.feels-like::before {
+    content: "Feels like: ";
+}
+
+.wind-speed::before {
+    content: "Wind speed: ";
+}
+
+.humidity::before {
+    content: "Humidity: ";
+}
+
+.uv-index::before {
+    content: "UV Index: ";
+}
